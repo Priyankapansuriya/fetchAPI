@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Search</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <script src="assets/js/image_search.js"></script>
+        <style>
+          body {
+              font-family: Helvetica (sans-serif);
+              background-color: #270c2e;
+          }
+
+          * {
+              box-sizing: border-box;
+          }
+          h1 {
+              color: #eee;
+              margin-bottom: 30px;
+          }
+          .container {
+              padding: 40px;
+              margin: 0 auto;
+              width: calc(100vw - 55vw);
+              max-width: 100%;
+              text-align: center;
+
+          }
+
+          #charactersList {
+              padding-inline-start: 0;
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+              grid-gap: 5px;
+          }
+
+          .character {
+              list-style-type: none;
+              background-color: #dbbfbf;
+              border-radius: 3px;
+              padding: 10px 20px;
+              display: grid;
+              grid-template-columns: 3fr 1fr;
+              grid-template-areas:
+                  'title image'
+                  'thumb image';
+              text-align: left;
+          }
+
+          .character > h2 {
+              grid-area: title;
+              margin-bottom: 0px;
+          }
+
+          .character > p {
+              grid-area: thumb;
+              margin: 0;
+              margin-top: -18px;
+          }
+
+          .character > img {
+              max-height: 100px;
+              grid-area: image;
+              align: right;
+          }
+
+          #searchBar {
+            width: calc(100vw - 55vw);
+            max-width: 100%;
+              height: 32px;
+              border-radius: 3px;
+              border: 1px solid #eaeaea;
+              padding: 5px 10px;
+              font-size: 12px;
+          }
+
+          #searchWrapper {
+              position: relative;
+          }
+
+          #searchWrapper i {
+              position: absolute;
+              top: 7px;
+              right: 15px;
+          }
+  </style>
+        <body>
+            <div class="container">
+                <h1>Images  <i class="fa-solid fa-image"></i></h1>
+                <div id="searchWrapper">
+                    <input type="text"
+                        name="searchBar"
+                        id="searchBar"
+                        placeholder="search for a character"
+                    />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <ul id="charactersList"></ul>
+            </div>
+        </body>
+    </html>
